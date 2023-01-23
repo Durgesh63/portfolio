@@ -127,7 +127,7 @@ function Portfolio() {
       <div className='text-center'>
       <div className="buttons pt-3">
               {/* <a href='/' className="btn btn-primary rounded">Contact US</a> */}
-              <Link className="btn btn-primary rounded"  to='/contact-us'>contact Us</Link>
+              <Link className="btn btn-primary rounded"  to='/portfolio/contact-us/'>contact Us</Link>
 
             </div> 
       </div>

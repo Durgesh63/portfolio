@@ -15,14 +15,14 @@ function Navbar() {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav ml-auto align-items-center">
               <li className="nav-item">
-                <Link className="nav-link" to='/'>Home</Link>
+                <Link className="nav-link" to='/portfolio/'>Home</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to='/portfolio'>Portfolio</Link>
+                <Link className="nav-link" to='/portfolio/portfolio/'>Portfolio</Link>
               </li>                   
               
               <li className="nav-item">
-                <Link className="nav-link"  to='/contact-us'>contact</Link>
+                <Link className="nav-link"  to='/portfolio/contact-us'>contact</Link>
               </li>
             </ul>
           </div>
