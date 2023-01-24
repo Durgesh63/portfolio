@@ -27,8 +27,8 @@ function Portfolio() {
                 <div className="overlay">
                   <div className="overlay-infos">
                     <h5>Portfolio</h5>
-                    <a href="/" target="_blank" rel="noreferrer"><i className="fa-solid fa-magnifying-glass-location" /></a>
-                    <a href="/" target="_blank" rel="noreferrer"><i className="fa-solid fa-link" /></a>
+                    <a href="https://durgesh63.github.io/portfolio/" target="_blank" rel="noreferrer"><i className="fa-solid fa-magnifying-glass-location" /></a>
+                    <a href="https://github.com/Durgesh63/portfolio" target="_blank" rel="noreferrer"><i className="fa-solid fa-link" /></a>
                   </div>  
                 </div>
               </div>
@@ -70,8 +70,8 @@ function Portfolio() {
                 <div className="overlay">
                   <div className="overlay-infos">
                     <h5>ToDoList</h5>
-                    <a href="https://durgesh63.github.io/portfolio/"><i className="fa-solid fa-magnifying-glass-location" /></a>
-                    <a href="https://github.com/Durgesh63/portfolio"><i className="fa-solid fa-link" /></a>
+                    <a href="https://durgesh63.github.io/portfolio/" target="_blank" rel="noreferrer"><i className="fa-solid fa-magnifying-glass-location" /></a>
+                    <a href="https://github.com/Durgesh63/portfolio" target="_blank" rel="noreferrer"><i className="fa-solid fa-link" /></a>
                   </div>  
                 </div>
               </div>
@@ -80,8 +80,8 @@ function Portfolio() {
                 <div className="overlay">
                   <div className="overlay-infos">
                     <h5>Shoping.com</h5>
-                    <a href="https://durgesh63.github.io/shoping/"><i className="fa-solid fa-magnifying-glass-location" /></a>
-                    <a href="https://github.com/Durgesh63/shoping"><i className="fa-solid fa-link" /></a>
+                    <a href="https://durgesh63.github.io/shoping/" target="_blank" rel="noreferrer"><i className="fa-solid fa-magnifying-glass-location" /></a>
+                    <a href="https://github.com/Durgesh63/shoping" target="_blank" rel="noreferrer"><i className="fa-solid fa-link" /></a>
                   </div>                              
                 </div>
               </div>                  
