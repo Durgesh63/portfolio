@@ -10,8 +10,8 @@ function Portfolio() {
     const portfolio = "https://res.cloudinary.com/anmoldev/image/upload/v1674423851/Screenshot_from_2023-01-23_03-13-09_hw3igv.png"
     const Blogging_website = "https://res.cloudinary.com/anmoldev/image/upload/v1674417699/portfolio/blog-1_coix1h.jpg"
     const fileloader = "https://res.cloudinary.com/anmoldev/image/upload/v1674424334/Screenshot_from_2023-01-23_03-21-41_ozp4v1.png"
-    const todolist = "https://res.cloudinary.com/anmoldev/image/upload/v1674424334/Screenshot_from_2023-01-23_03-21-41_ozp4v1.png"
-    const shopingsite = "https://res.cloudinary.com/anmoldev/image/upload/v1674424334/Screenshot_from_2023-01-23_03-21-41_ozp4v1.png"
+    const todolist = "https://res.cloudinary.com/anmoldev/image/upload/v1674590395/portfolio/Screenshot_from_2023-01-25_01-29-42_sobwgi.png"
+    const shopingsite = "https://res.cloudinary.com/anmoldev/image/upload/v1674590110/portfolio/Screenshot_from_2023-01-25_01-24-22_tvpdtx.png"
   return (
     <>
         <Navbar />
@@ -70,8 +70,8 @@ function Portfolio() {
                 <div className="overlay">
                   <div className="overlay-infos">
                     <h5>ToDoList</h5>
-                    <a href="/"><i className="fa-solid fa-magnifying-glass-location" /></a>
-                    <a href="/"><i className="fa-solid fa-link" /></a>
+                    <a href="https://durgesh63.github.io/portfolio/"><i className="fa-solid fa-magnifying-glass-location" /></a>
+                    <a href="https://github.com/Durgesh63/portfolio"><i className="fa-solid fa-link" /></a>
                   </div>  
                 </div>
               </div>
@@ -79,9 +79,9 @@ function Portfolio() {
               <img src={shopingsite} alt={"shopingsite"} />
                 <div className="overlay">
                   <div className="overlay-infos">
-                    <h5>ShopingSite</h5>
-                    <a href="/"><i className="fa-solid fa-magnifying-glass-location" /></a>
-                    <a href="/"><i className="fa-solid fa-link" /></a>
+                    <h5>Shoping.com</h5>
+                    <a href="https://durgesh63.github.io/shoping/"><i className="fa-solid fa-magnifying-glass-location" /></a>
+                    <a href="https://github.com/Durgesh63/shoping"><i className="fa-solid fa-link" /></a>
                   </div>                              
                 </div>
               </div>                  
