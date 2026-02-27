@@ -2,7 +2,7 @@
 
 ## Live Demo
 
-- 🚀 Live Demo: [https://durgesh63.github.io/portfolio/](https://durgesh63.github.io/portfolio/)
+- 🚀 Live Demo: [https://portfolio-vn3r.onrender.com/](https://portfolio-vn3r.onrender.com/)
 
 Responsive developer portfolio built with React (Vite), Tailwind CSS, and Framer Motion.
 
