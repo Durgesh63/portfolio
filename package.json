@@ -2,7 +2,7 @@
   "name": "premium-mern-portfolio",
   "private": true,
   "version": "1.0.0",
-  "homepage": "https://durgesh63.github.io/",
+  "homepage": "https://durgesh63.github.io/portfolio/",
   "type": "module",
   "scripts": {
     "dev": "vite",
