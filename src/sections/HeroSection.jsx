@@ -8,6 +8,8 @@ import Particles from '../components/Particles';
 import { typingWords } from '../assets/data';
 import { useTypingEffect } from '../hooks/useTypingEffect';
 
+const resumeUrl = `https://drive.google.com/file/d/13g8MptiI2VM2YGn8C_yzEZgZWPpwYg73/view?usp=sharing`;
+
 const iconMap = {
   github: FaGithub,
   linkedin: FaLinkedinIn,
@@ -93,7 +95,7 @@ const HeroSection = ({ socialLinks, profile }) => {
           className="mt-10 flex flex-wrap gap-4"
         >
           <Button href="#projects">View Projects</Button>
-          <Button target="_blank" href="https://drive.google.com/file/d/13g8MptiI2VM2YGn8C_yzEZgZWPpwYg73/view?usp=sharing" variant="secondary" download>
+          <Button target="_blank" href={resumeUrl} variant="secondary" download>
             Download Resume
           </Button>
         </motion.div>
