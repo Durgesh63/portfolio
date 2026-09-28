@@ -140,5 +140,4 @@ More projects (HRMS, IPAD, etc.) will be added later.
 - **Hero:** the stat tiles were replaced by highlight cards (Saraswat Bank, < 300 ms search, HDFC · CCAvenue · Razorpay, CI/CD on AWS); the "Open to opportunities" badge was removed.
 - **Skills:** every technology has a logo (`public/tech/`); groups are Java & Spring Ecosystem, Frontend, Node.js Backend, Databases, Cloud/DevOps & Tools, AI & Automation.
 - **Certifications** section stays hidden until the first entry is added in `data/portfolio.ts`.
-- **Branding** (`branding/`): LinkedIn cover banner and LinkedIn Featured / link-preview banner (`public/og-image.png`).
 - Elasticsearch figure changed to **< 300 ms**; several percentage claims removed from the Experience section.

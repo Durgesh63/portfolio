@@ -31,10 +31,9 @@ export const metadata: Metadata = {
     title,
     description,
     url: "/",
-    // Link-preview banner (LinkedIn Featured, WhatsApp, Slack). Source: branding/featured-banner.html
-    images: [{ url: "/og-image.png", width: 1200, height: 627, alt: title }],
+    images: [{ url: profile.avatar, width: 460, height: 460, alt: profile.name }],
   },
-  twitter: { card: "summary_large_image", title, description, images: ["/og-image.png"] },
+  twitter: { card: "summary", title, description, images: [profile.avatar] },
   icons: { icon: profile.avatar },
 };
 
