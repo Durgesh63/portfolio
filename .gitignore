@@ -9,3 +9,6 @@ next-env.d.ts
 
 # Internal planning notes (keep local, never publish)
 PROJECT_PLAN.md
+
+# Resume source (regenerate public/Durgesh_Maurya_Resume.pdf from it)
+resume/
