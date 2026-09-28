@@ -1,6 +1,8 @@
-node_modules
-dist
-.vscode
+node_modules/
+.next/
+out/
+next-env.d.ts
+*.tsbuildinfo
+.env*
+.vercel
 .DS_Store
-.env
-.env.*

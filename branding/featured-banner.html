@@ -1,0 +1,84 @@
+<!doctype html>
+<!--
+  LinkedIn "Featured" / link-preview banner (1200 x 627, LinkedIn's link-preview size).
+  Also used as the site's Open Graph image (public/og-image.png).
+  Re-render:
+    chrome --headless=new --hide-scrollbars --window-size=1200,627 --virtual-time-budget=5000 \
+      --screenshot=../public/og-image.png featured-banner.html
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Featured Banner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1200px; height: 627px; overflow: hidden; }
+  body {
+    font-family: Inter, system-ui, sans-serif;
+    color: #f1f5f9;
+    background:
+      radial-gradient(520px 420px at 88% 12%, rgba(37,99,235,.55), transparent 70%),
+      radial-gradient(420px 360px at 4% 96%, rgba(234,88,12,.32), transparent 70%),
+      radial-gradient(460px 380px at 60% 110%, rgba(13,148,136,.35), transparent 70%),
+      #020617;
+    position: relative;
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(148,163,184,.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,.06) 1px, transparent 1px);
+    background-size: 40px 40px;
+  }
+  .card {
+    position: absolute; inset: 44px;
+    display: flex; align-items: center; justify-content: space-between; gap: 48px;
+    padding: 52px 60px;
+    border-radius: 28px;
+    background: rgba(15,23,42,.5);
+    border: 1px solid rgba(255,255,255,.1);
+    box-shadow: 0 20px 60px rgba(0,0,0,.45);
+    backdrop-filter: blur(18px) saturate(160%);
+  }
+  .text { flex: 1; min-width: 0; }
+  .name { font-size: 26px; font-weight: 600; color: #cbd5e1; }
+  h1 { margin-top: 10px; font-size: 58px; line-height: 1.04; font-weight: 800; letter-spacing: -.02em; }
+  h1 .java { color: #fb923c; }
+  .tagline { margin-top: 18px; font-size: 22px; line-height: 1.45; color: #cbd5e1; max-width: 620px; }
+  .chips { margin-top: 30px; display: flex; flex-wrap: wrap; gap: 10px; max-width: 660px; }
+  .chip {
+    font-size: 17px; font-weight: 600; padding: 8px 15px; border-radius: 10px;
+    background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.14); color: #e2e8f0;
+  }
+  .chip.hl { border-color: rgba(251,146,60,.55); color: #fdba74; }
+  .photo {
+    flex-shrink: 0; width: 250px; height: 250px; padding: 8px;
+    border-radius: 28px;
+    background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.16);
+  }
+  .photo img { width: 100%; height: 100%; object-fit: cover; border-radius: 21px; display: block; }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="card">
+    <div class="text">
+      <p class="name">Durgesh Maurya</p>
+      <h1><span class="java">Java</span> Full Stack<br>Developer</h1>
+      <p class="tagline">Building scalable, secure &amp; high-performance web applications with Spring Boot and React / Next.js.</p>
+      <div class="chips">
+        <span class="chip hl">Java</span>
+        <span class="chip hl">Spring Boot</span>
+        <span class="chip hl">Microservices</span>
+        <span class="chip">React</span>
+        <span class="chip">Next.js</span>
+        <span class="chip">PostgreSQL</span>
+        <span class="chip">AWS</span>
+      </div>
+    </div>
+    <div class="photo"><img src="../public/avatar.jpg" alt=""></div>
+  </div>
+</body>
+</html>

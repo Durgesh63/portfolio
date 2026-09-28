@@ -1,0 +1,88 @@
+<!doctype html>
+<!--
+  LinkedIn cover banner source (1584 x 396, LinkedIn's recommended size).
+  Re-render to PNG (2x for sharpness):
+    chrome --headless=new --hide-scrollbars --force-device-scale-factor=2 --window-size=1584,396 \
+      --virtual-time-budget=5000 --screenshot=linkedin-banner.png linkedin-banner.html
+  Text sits on the right: LinkedIn's profile photo covers the bottom-left corner.
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>LinkedIn Banner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1584px; height: 396px; overflow: hidden; }
+  body {
+    font-family: Inter, system-ui, sans-serif;
+    color: #f1f5f9;
+    background:
+      radial-gradient(900px 420px at 88% 20%, rgba(59,130,246,.28), transparent 60%),
+      radial-gradient(700px 380px at 10% 110%, rgba(249,115,22,.14), transparent 60%),
+      linear-gradient(120deg, #020617 0%, #0b1733 55%, #0f2657 100%);
+    position: relative;
+  }
+  /* faint engineering grid */
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(rgba(148,163,184,.07) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(148,163,184,.07) 1px, transparent 1px);
+    background-size: 44px 44px;
+    mask-image: linear-gradient(90deg, rgba(0,0,0,.9), rgba(0,0,0,.35));
+  }
+  /* decorative Spring Boot snippet, top-left (above where the profile photo sits) */
+  .code {
+    position: absolute; left: 56px; top: 44px;
+    font: 500 15px/1.7 "JetBrains Mono", ui-monospace, monospace;
+    color: rgba(203,213,225,.55);
+    white-space: pre;
+  }
+  .code .k { color: rgba(96,165,250,.8); }
+  .code .a { color: rgba(251,146,60,.85); }
+  .code .s { color: rgba(134,239,172,.75); }
+  .content {
+    position: absolute; right: 88px; top: 50%; transform: translateY(-50%);
+    width: 1000px; text-align: right;
+  }
+  h1 {
+    font-size: 62px; font-weight: 800; letter-spacing: -.02em; line-height: 1.05;
+  }
+  h1 .java { color: #fb923c; }
+  .tagline { margin-top: 14px; font-size: 22px; font-weight: 500; color: #cbd5e1; }
+  .chips { margin-top: 26px; display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 10px; }
+  .chip {
+    font-size: 17px; font-weight: 600; padding: 8px 16px; border-radius: 10px;
+    background: rgba(15,23,42,.65); border: 1px solid rgba(148,163,184,.28); color: #e2e8f0;
+  }
+  .chip.hl { border-color: rgba(251,146,60,.6); color: #fdba74; }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+
+  <div class="code"><span class="a">@RestController</span>
+<span class="a">@RequestMapping</span>(<span class="s">"/api/v1"</span>)
+<span class="k">public class</span> BuildController {
+  <span class="a">@GetMapping</span>(<span class="s">"/scale"</span>)
+  <span class="k">public</span> Response ship() { ... }
+}</div>
+
+  <div class="content">
+    <h1><span class="java">Java</span> Full Stack Developer</h1>
+    <p class="tagline">Building scalable, secure &amp; high-performance web applications</p>
+    <div class="chips">
+      <span class="chip hl">Java</span>
+      <span class="chip hl">Spring Boot</span>
+      <span class="chip hl">Microservices</span>
+      <span class="chip">React</span>
+      <span class="chip">Next.js</span>
+      <span class="chip">PostgreSQL</span>
+      <span class="chip">MongoDB</span>
+      <span class="chip">AWS</span>
+    </div>
+  </div>
+</body>
+</html>

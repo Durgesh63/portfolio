@@ -1,0 +1,100 @@
+@import "tailwindcss";
+
+/* Dark mode is class-based (`<html class="dark">`), toggled by ThemeToggle. */
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --color-ink: #0f172a;
+  --color-body: #334155;
+  --color-muted: #64748b;
+  --color-line: #e2e8f0;
+  --color-canvas: #f8fafc;
+  --color-brand: #1d4ed8;
+  --color-brand-dark: #1e40af;
+  --color-brand-soft: #eff6ff;
+  --color-on-brand: #ffffff;
+}
+
+/* Glassmorphism tokens (plain vars, not Tailwind colors). */
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.45);
+  --glass-border: rgba(255, 255, 255, 0.7);
+  --glass-shadow: 0 8px 32px rgba(15, 23, 42, 0.08);
+  --glass-chip: rgba(255, 255, 255, 0.6);
+  --blob-1: rgba(59, 130, 246, 0.42);
+  --blob-2: rgba(249, 115, 22, 0.3);
+  --blob-3: rgba(20, 184, 166, 0.3);
+}
+
+/* Same tokens, dark values — every component picks these up automatically. */
+:root.dark {
+  --color-ink: #f1f5f9;
+  --color-body: #cbd5e1;
+  --color-muted: #94a3b8;
+  --color-line: #1e293b;
+  --color-canvas: #020617;
+  --color-brand: #60a5fa;
+  --color-brand-dark: #93c5fd;
+  --color-brand-soft: #172554;
+  --color-on-brand: #020617;
+  --glass-bg: rgba(15, 23, 42, 0.5);
+  --glass-border: rgba(255, 255, 255, 0.09);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  --glass-chip: rgba(255, 255, 255, 0.05);
+  --blob-1: rgba(37, 99, 235, 0.3);
+  --blob-2: rgba(234, 88, 12, 0.14);
+  --blob-3: rgba(13, 148, 136, 0.18);
+  color-scheme: dark;
+}
+
+/* Frosted-glass card: translucent fill + background blur. */
+@utility glass {
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  -webkit-backdrop-filter: blur(16px) saturate(160%);
+  backdrop-filter: blur(16px) saturate(160%);
+}
+
+/* Lighter translucent fill for chips/tags that sit inside glass cards. */
+@utility glass-chip {
+  background: var(--glass-chip);
+  border: 1px solid var(--glass-border);
+}
+
+/* Fixed color blobs behind the page — what the glass blurs. Gradients, not
+   filter: blur(), so scrolling stays cheap. */
+.page-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(40vw 40vw at 85% 8%, var(--blob-1), transparent 70%),
+    radial-gradient(35vw 35vw at 5% 45%, var(--blob-2), transparent 70%),
+    radial-gradient(45vw 45vw at 75% 95%, var(--blob-3), transparent 70%),
+    var(--color-canvas);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--color-canvas);
+  color: var(--color-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
