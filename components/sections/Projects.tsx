@@ -50,6 +50,9 @@ export function Projects() {
                 )}
               </div>
             )}
+            {!project.github && !project.live && project.note && (
+              <p className="mt-5 border-t border-line pt-4 text-sm text-muted">{project.note}</p>
+            )}
           </article>
         ))}
       </div>

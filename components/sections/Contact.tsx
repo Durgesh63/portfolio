@@ -3,6 +3,8 @@ import { Section } from "../Section";
 import { ResumeButton } from "../ResumeButton";
 import { GitHubIcon, LinkedInIcon, MailIcon, PhoneIcon } from "../icons";
 
+const { availability } = profile;
+
 const channels = [
   { label: "Email", value: profile.email, href: `mailto:${profile.email}`, Icon: MailIcon },
   { label: "Phone", value: profile.phone, href: `tel:${profile.phone.replace(/-/g, "")}`, Icon: PhoneIcon },
@@ -14,7 +16,9 @@ export function Contact() {
   return (
     <Section id="contact" eyebrow="Contact" title="Let's work together">
       <p className="max-w-2xl text-lg leading-relaxed">
-        I&apos;m open to Java Full Stack roles. The quickest way to reach me is email or LinkedIn.
+        I&apos;m open to Java Full Stack roles in {availability.locations.join(" or ")}, and to{" "}
+        {availability.workModes.join(" or ").toLowerCase()} work. Notice period: {availability.noticePeriod}. You
+        can reach me by phone, email or LinkedIn.
       </p>
       <ul className="mt-8 grid gap-4 sm:grid-cols-2">
         {channels.map(({ label, value, href, Icon }) => (

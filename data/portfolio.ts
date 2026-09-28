@@ -19,6 +19,8 @@ export type Project = {
   github?: string;
   live?: string;
   badge?: string;
+  // Shown only when there's no github/live link, to explain why.
+  note?: string;
 };
 
 export type Certification = {
@@ -33,6 +35,13 @@ export const profile = {
   role: "Java Full Stack Developer",
   experience: "~4 years",
   location: "Noida, India",
+  current: "Currently at Vigility Technologies",
+  // Shown in the hero and contact section — recruiters screen on these first.
+  availability: {
+    noticePeriod: "30 days",
+    locations: ["Gurgaon", "Pune"],
+    workModes: ["Remote", "Hybrid"],
+  },
   email: "durgeshmaurya0998@gmail.com",
   phone: "+91-6388876932",
   github: "https://github.com/Durgesh63",
@@ -40,23 +49,25 @@ export const profile = {
   resume: "/Durgesh_Maurya_Resume.pdf",
   avatar: "/avatar.jpg",
   headline:
-    "I build scalable, secure, high-performance web applications with Java, Spring Boot, microservices and React / Next.js.",
+    "I build Java & Spring Boot microservices, Kafka pipelines and React / Next.js frontends — most recently a banking report system for Saraswat Bank.",
   about: [
-    "I'm a Java Full Stack Developer with nearly 4 years of experience building production systems end to end — from Spring Boot microservices and message queues to React and Next.js frontends.",
-    "I started in the MERN stack and moved into Java, so I'm comfortable across both ecosystems. I've shipped banking report pipelines for Saraswat Bank, payment integrations with HDFC and CCAvenue, JWT/RBAC security for thousands of users, and search over millions of records.",
-    "I care about measurable impact: faster APIs, lower infrastructure load, reliable deployments, and code that the next developer can maintain.",
+    "I'm a Java Full Stack Developer with nearly 4 years of experience building production systems end to end — from Spring Boot microservices and Kafka-based messaging to React and Next.js frontends. Domain experience: BFSI (Saraswat Bank), payment gateways and healthcare data (CCDA).",
+    "I spent my first year and a half in the MERN stack at Mityung Infotech and the last two years in Java and Spring Boot at Hirring.com and Vigility Technologies, so I'm comfortable across both ecosystems. I've shipped a Kafka-driven report pipeline for Saraswat Bank, payment integrations with HDFC, CCAvenue and Razorpay, JWT/RBAC security for 5,000+ users, and Elasticsearch search over 1M+ records.",
   ],
 };
 
 // Hero highlight cards — the strongest, most specific wins from real work.
-export const highlights = [
+// `where` names the employer so a client name (Saraswat Bank) isn't read as one.
+export const highlights: { title: string; where?: string; detail: string }[] = [
   {
     title: "Saraswat Bank",
-    detail: "Built a queue-based PDF report generation system for the bank's large reports.",
+    where: "Vigility Technologies",
+    detail: "Kafka-driven PDF report generation in Java & Spring Boot, producing the bank's large reports asynchronously.",
   },
   {
     title: "< 300 ms search",
-    detail: "Elasticsearch indexing across 1M+ records for fast search results.",
+    where: "Hirring.com",
+    detail: "Elasticsearch indexing across 1M+ records.",
   },
   {
     title: "HDFC · CCAvenue · Razorpay",
@@ -64,7 +75,8 @@ export const highlights = [
   },
   {
     title: "CI/CD on AWS",
-    detail: "Automated GitHub Actions pipelines deploying to EC2 & S3 with 99.9% uptime.",
+    where: "Vigility Technologies",
+    detail: "GitHub Actions pipelines deploying to AWS EC2 & S3, with 99.9% uptime.",
   },
 ];
 
@@ -82,31 +94,11 @@ export const skills: { group: string; wide?: boolean; items: Skill[] }[] = [
       { name: "Spring Security", icon: "spring" },
       { name: "Spring Data JPA", icon: "spring" },
       { name: "Microservices", icon: "microservices" },
+      { name: "Apache Kafka", icon: "kafka" },
       { name: "REST APIs", icon: "rest" },
       { name: "JWT", icon: "jwt" },
       { name: "Maven", icon: "maven" },
       { name: "JUnit", icon: "junit" },
-    ],
-  },
-  {
-    group: "Frontend",
-    items: [
-      { name: "React", icon: "react" },
-      { name: "Next.js", icon: "nextjs" },
-      { name: "JavaScript", icon: "javascript" },
-      { name: "TypeScript", icon: "typescript" },
-      { name: "Redux", icon: "redux" },
-      { name: "Tailwind CSS", icon: "tailwind" },
-      { name: "MUI", icon: "mui" },
-      { name: "shadcn/ui", icon: "shadcn" },
-    ],
-  },
-  {
-    group: "Node.js Backend",
-    items: [
-      { name: "Node.js", icon: "nodejs" },
-      { name: "Express", icon: "express" },
-      { name: "Socket.IO", icon: "socketio" },
     ],
   },
   {
@@ -130,6 +122,23 @@ export const skills: { group: string; wide?: boolean; items: Skill[] }[] = [
     ],
   },
   {
+    group: "Frontend & Node.js",
+    wide: true,
+    items: [
+      { name: "React", icon: "react" },
+      { name: "Next.js", icon: "nextjs" },
+      { name: "JavaScript", icon: "javascript" },
+      { name: "TypeScript", icon: "typescript" },
+      { name: "Redux", icon: "redux" },
+      { name: "Tailwind CSS", icon: "tailwind" },
+      { name: "MUI", icon: "mui" },
+      { name: "shadcn/ui", icon: "shadcn" },
+      { name: "Node.js", icon: "nodejs" },
+      { name: "Express", icon: "express" },
+      { name: "Socket.IO", icon: "socketio" },
+    ],
+  },
+  {
     group: "AI & Automation",
     wide: true,
     items: [
@@ -148,11 +157,12 @@ export const experience: Experience[] = [
     start: "Apr 2026",
     end: "Present",
     highlights: [
-      "Automated CI/CD with GitHub Actions and deployed on AWS EC2 and S3 — cut media storage by 40% and EC2 load by 25%, achieving 99.9% uptime.",
-      "Built a queue-based PDF report generation system for Saraswat Bank, enabling large reports to be processed at scale.",
-      "Implemented Socket.IO real-time notifications, increasing user engagement by 35% and cutting notification delivery time by 40%.",
+      "Built a Kafka-driven PDF report generation system in Java and Spring Boot for Saraswat Bank, generating large reports asynchronously.",
+      "Automated CI/CD with GitHub Actions, deploying to AWS EC2 and S3; production runs at 99.9% uptime.",
+      "Reduced media storage by 40% and EC2 load by 25% on AWS.",
+      "Implemented Socket.IO real-time notifications, cutting notification delivery time by 40%.",
     ],
-    stack: ["AWS", "GitHub Actions", "Queues", "Socket.IO"],
+    stack: ["Java", "Spring Boot", "Kafka", "AWS", "GitHub Actions", "Socket.IO"],
   },
   {
     company: "Hirring.com",
@@ -161,13 +171,14 @@ export const experience: Experience[] = [
     start: "Aug 2024",
     end: "Mar 2026",
     highlights: [
-      "Implemented Spring Security with JWT authentication and role-based access control for 5,000+ users; Redis caching reduced database load by 45% and query tuning improved API response times by 20%.",
+      "Implemented Spring Security with JWT authentication and role-based access control (RBAC) for 5,000+ users.",
+      "Added Redis caching that reduced database load by 45%, and tuned queries to improve API response times by 20%.",
       "Implemented Elasticsearch indexing for 1M+ records with search responses under 300 ms.",
-      "Developed a distributed email processing system on AWS SQS handling 10,000+ emails/day with priority-based delivery.",
+      "Built an asynchronous email pipeline on AWS SQS handling 10,000+ emails/day with priority-based delivery.",
       "Designed communication across 3+ microservices, including encrypted API-to-API data exchange.",
       "Built AI-powered automation workflows in n8n, reducing manual effort by 50%.",
     ],
-    stack: ["Spring Boot", "Spring Security", "Redis", "Elasticsearch", "SQS", "Microservices"],
+    stack: ["Java", "Spring Boot", "Spring Security", "JWT", "Redis", "Elasticsearch", "AWS SQS", "Microservices"],
   },
   {
     company: "Mityung Infotech Pvt Ltd",
@@ -176,12 +187,12 @@ export const experience: Experience[] = [
     start: "Feb 2023",
     end: "Jul 2024",
     highlights: [
-      "Integrated payment gateways — HDFC, CCAvenue and LoanTap — for secure, reliable transaction processing.",
-      "Implemented Google / Facebook social login and cookie-based SSO, boosting onboarding by 30% and cutting login time by 35%.",
-      "Developed a CCDA parsing library converting healthcare CCDA files to JSON, improving processing efficiency by 40%.",
-      "Improved UI performance by 60% with Redux and React Hooks; accelerated delivery with Tailwind CSS, PrimeReact, ShadCN and MUI.",
+      "Integrated HDFC and CCAvenue payment gateways and LoanTap APIs for secure, reliable transaction processing.",
+      "Implemented Google / Facebook social login and cookie-based SSO, cutting login time by 35%.",
+      "Developed a CCDA parsing library converting healthcare CCDA files to JSON for downstream integration.",
+      "Improved UI performance with Redux and React Hooks; accelerated delivery with Tailwind CSS, PrimeReact, shadcn/ui and MUI.",
     ],
-    stack: ["React", "Redux", "Node.js", "MongoDB", "Payment APIs"],
+    stack: ["React", "Redux", "Node.js", "MongoDB", "Tailwind CSS"],
   },
 ];
 
@@ -192,7 +203,8 @@ export const projects: Project[] = [
     description:
       "A full-stack marketplace for buying and licensing images — with cart, wishlist, search, Stripe payments, and compressed image delivery from AWS S3.",
     stack: ["Spring Boot", "React", "MongoDB", "Stripe", "AWS S3", "AWS EC2"],
-    // TODO: add the GitHub link once the repo is public.
+    // Remove the note once the github / live link is added.
+    note: "Source code: private repository, being made public soon.",
   },
   {
     name: "HealthCare ChatBot",
@@ -205,10 +217,10 @@ export const projects: Project[] = [
   },
   {
     name: "ccda-reader",
-    tagline: "Healthcare data parser",
+    tagline: "CCDA-to-JSON converter",
     description:
-      "A library that parses CCDA (Consolidated Clinical Document Architecture) healthcare files into clean JSON for easy integration.",
-    stack: ["JavaScript", "Node.js", "XML"],
+      "A Next.js app that converts CCDA (Consolidated Clinical Document Architecture) healthcare XML files into clean JSON for easy integration.",
+    stack: ["JavaScript", "Next.js", "React", "XML"],
     github: "https://github.com/Durgesh63/ccda-reader",
   },
 ];

@@ -64,6 +64,24 @@ export function MapPinIcon({ className }: IconProps) {
   );
 }
 
+export function ClockIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <circle cx="12" cy="12" r="10" />
+      <path d="M12 6v6l4 2" />
+    </svg>
+  );
+}
+
+export function LaptopIcon({ className }: IconProps) {
+  return (
+    <svg {...base} className={className}>
+      <rect x="4" y="4" width="16" height="11" rx="2" />
+      <path d="M2 20h20" />
+    </svg>
+  );
+}
+
 export function ExternalIcon({ className }: IconProps) {
   return (
     <svg {...base} className={className}>

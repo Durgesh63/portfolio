@@ -11,8 +11,8 @@ import { Contact } from "@/components/sections/Contact";
 
 const navLinks = [
   { href: "#about", label: "About" },
-  { href: "#skills", label: "Skills" },
   { href: "#experience", label: "Experience" },
+  { href: "#skills", label: "Skills" },
   { href: "#projects", label: "Projects" },
   ...(certifications.length > 0 ? [{ href: "#certifications", label: "Certifications" }] : []),
   { href: "#education", label: "Education" },
@@ -26,8 +26,8 @@ export default function Home() {
       <main>
         <Hero />
         <About />
-        <Skills />
         <Experience />
+        <Skills />
         <Projects />
         <Certifications />
         <Education />
